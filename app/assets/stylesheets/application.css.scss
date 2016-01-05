@@ -20,12 +20,13 @@
  @import 'normalize';
  @import "font-awesome";
 
- $principal: #32526E;
- $secondary: #81B9C3;
+ $principal: #125688;
+ $secondary: #4090DB;
  $dark: #424652;
  $white: #fff;
  $highlight: #FF884D;
  $light-gray: #ededed;
+ $uLight-gray: #f9f9f9;
  $gray: #939393;
  $red: #ff4c4c;
 
@@ -102,6 +103,12 @@ p,ul,ol{
 	margin: 0 0 1.6em 0;
 }
 
+.navbar{
+    a.navbar-brand{
+        font-family: 'Lobster Two', cursive;
+    }
+}
+
 .alert{
     z-index: 300;
     position: fixed;
@@ -113,3 +120,120 @@ p,ul,ol{
         font-size: 1em;
     }
 }
+
+#welcome{
+    height: 100vh;
+    background: $uLight-gray;
+    .wrapper-welcome{
+        width: 900px;
+    	margin: 0px auto;
+    }
+    .iphone{
+        position: relative;
+        .img-iphone{
+            margin-left: -40px;
+        }
+        .images{
+            position: absolute;
+            height: 420px;
+            width: 238px;
+            left: 213px;
+            top: 142px;
+            overflow: hidden;
+            background: #000;
+            img{
+                height: 420px;
+                width: 238px;
+            }
+            .imgage{
+                position: absolute;
+            }
+        }
+    }
+    .log_in{
+        position: relative;
+        width: 350px;
+        padding: 1em 0;
+        background: $white;
+        margin-top: 25vh;
+        margin-left: 2em;
+        text-align: center;
+        border: 1px solid $light-gray;
+        #logo{
+            color: $principal;
+            margin: 0 auto;
+            font-family: 'Lobster Two', cursive;
+            letter-spacing: 1px;
+            font-size: 3em;
+        }
+        .form-group{
+            margin: 5px;
+        }
+        .form-control{
+            border-color: $light-gray;
+            //Border radius
+            -moz-border-radius: 3px;
+            -webkit-border-radius: 3px;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+        .btn-log_in{
+            width: 100%;
+            font-size: 1em;
+            //Border radius
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+            border-radius: 4px;
+            background: $secondary;
+            border: none;
+            color: $white;
+            font-weight: 700;
+            padding: .5em 0;
+            margin-top: 10px;
+            &:hover{
+                background: $principal;
+            }
+        }
+        .forg_password{
+            position: absolute;
+            left: 230px;
+            top: 130px;
+            a{
+                text-decoration: none;
+                color: $principal;
+                &:hover{
+                    color: $dark;
+                }
+            }
+        }
+    }
+    .links{
+        padding-top: 2em;
+        text-align: center;
+        a{
+            text-decoration: none;
+            color: $principal;
+            &:hover{
+                color: $dark;
+            }
+        }
+    }
+}
+
+@media (max-width: 993px){
+    .img-iphone{
+        display: none;
+    }
+    .images{
+        display: none;
+    }
+    .log_in{
+        margin: 0 auto;
+    }
+    .wrapper-welcome,#welcome{
+        width: 100vw;
+    }
+}
+
+@import 'users';
+@import 'pictures';

@@ -17,3 +17,35 @@
 //= require masonry/jquery.masonry
 //= require jquery.turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+    //Set options
+    var switchSpeed = 800;
+    var speed = 4000;
+    var id;
+
+    //Add initial active class
+    $('.imgage').first().addClass('active');
+
+    //Hide all images
+    $('.imgage').hide();
+
+    //Show first image
+    $('.active').show();
+
+    id = setInterval(nextImage,speed);
+
+    function nextImage(){
+        $('.active').removeClass('active').addClass('oldActive');
+            if($('.oldActive').is(':last-child')){
+                $('.imgage').first().addClass('active');
+            }else{
+                $('.oldActive').next().addClass('active');
+            }
+            $('.oldActive').removeClass('oldActive');
+            $('.imgage').fadeOut(switchSpeed);
+            $('.active').fadeIn(switchSpeed);
+    }
+
+
+});

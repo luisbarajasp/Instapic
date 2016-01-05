@@ -1,5 +1,5 @@
 class PicturesController < ApplicationController
-
+  before_action :authenticate_user!, except: [:show]
   before_filter :check_user, only: [:edit, :update, :destroy]
 
   def index
@@ -15,7 +15,7 @@ class PicturesController < ApplicationController
       @picture.user_id = current_user.id
 
       if @picture.save
-          redirect_to @picture, notice: "Picture uploaded succesfully."
+          redirect_to @picture, notice: "Pic uploaded succesfully."
       else
           render 'new', alert: "Error: try again."
       end
@@ -23,7 +23,7 @@ class PicturesController < ApplicationController
 
   def show
       @picture = Picture.find(params[:id])
-      @comment = Comment.new comment_params
+      @newComment = Comment.new comment_params
       @comments = @picture.comments.order('created_at DESC')
   end
 
@@ -36,7 +36,7 @@ class PicturesController < ApplicationController
 
       respond_to do |f|
 			if @picture.update(picture_params)
-				f.html {redirect_to @picture, notice: "Picture updated succesfully."}
+				f.html {redirect_to @picture, notice: "Pic updated succesfully."}
 				f.json { render :show, status: :ok, location: @picture }
 			else
 				f.html { render :edit }
@@ -63,8 +63,8 @@ class PicturesController < ApplicationController
   end
 
   def check_user
-    	if current_user != @pin.user
-    		redirect_to root, alert: "This picture is not yours"
+    	if current_user != @picture.user
+    		redirect_to root, alert: "This pic is not yours"
     	end
   end
 end

@@ -8,6 +8,12 @@ class User < ActiveRecord::Base
      validates_attachment_content_type :image, content_type: %w(image/jpeg image/jpg image/png)
 
  validates :avatar, presence: true
+ validates :username,
+  :presence => true,
+  :uniqueness => {
+    :case_sensitive => false
+  }
+  validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
 
   extend FriendlyId
   friendly_id :username, use: :slugged
