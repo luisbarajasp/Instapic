@@ -10,7 +10,7 @@
   <link href='https://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css'>
 </head>
 <body>
-    <% if controller.controller_name != 'devise/sessions' || controller.controller_name != 'devise/registrations'%>
+    <% if controller.action_name != 'new' %>
     <nav class="navbar">
         <% if controller.action_name == 'index' %>
         <div class="super_skinny_wrapper">
