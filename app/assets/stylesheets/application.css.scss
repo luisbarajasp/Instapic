@@ -33,11 +33,19 @@
  *{
      font-family: 'Raleway', sans-serif;
      box-sizing: border-box;
+     &:focus{
+         outline: none;
+     }
  }
 
  .wrapper{
 	width: 90%;
 	margin: 0px auto;
+}
+
+.wrapper2{
+   width: 85%;
+   margin: 0px auto;
 }
 
 .skinny_wrapper{
@@ -104,8 +112,59 @@ p,ul,ol{
 }
 
 .navbar{
-    a.navbar-brand{
-        font-family: 'Lobster Two', cursive;
+    height: 78px;
+    border-bottom: 1px solid $light-gray;
+    .navbar-brand{
+        margin-top: 13px;
+        a{
+            text-decoration: none;
+            font-family: 'Lobster Two', cursive;
+            color: $principal;
+            font-size: 26px;
+        }
+    }
+    .search-form{
+        margin-top: 10px;
+        padding: 15px;
+        text-align: center;
+        #query{
+            -moz-border-radius: 40px;
+            -webkit-border-radius: 40px;
+            border-radius: 40px;
+            border: 1px solid $light-gray;
+            width: 215px;
+            padding: 5px 0 4px 0;
+            font-size: 14px;
+            font-weight: 300;
+        }
+        #searchButton{
+            display: none;
+        }
+        #search_form{
+            display: inline-block;
+            text-align: center;
+        }
+        .fieldContainer{
+            position: relative;
+            width: 215px;
+            .fa-search{
+                position: absolute;
+                top: 9px;
+                left: 70px;
+                font-size: 10px;
+                color: $gray;
+            }
+        }
+    }
+    .user{
+        text-align: right;
+        margin-top: 31px;
+        a{
+            text-decoration: none;
+            color: $principal;
+            font-size: 16px;
+            font-weight: 600;
+        }
     }
 }
 
@@ -119,6 +178,17 @@ p,ul,ol{
         list-style: none;
         font-size: 1em;
     }
+}
+
+.blur{
+    text-align: center;
+    background: $uLight-gray;
+}
+
+.focus{
+    text-align: left;
+    background: $white;
+    text-indent: 25px;
 }
 
 #welcome{

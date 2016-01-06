@@ -47,5 +47,31 @@ $(document).ready(function(){
             $('.active').fadeIn(switchSpeed);
     }
 
+    //Serach bar
+    var searchField = $('#query');
+    var icon = $('.fa-search');
 
+    //Focus event Handler
+    $(searchField).on('focus',function(){
+        $(this).removeClass('blur');
+        $(this).addClass('focus');
+        $(icon).animate({
+                left: '10px'
+            },10);
+    });
+
+    //Blur event Handler
+    $(searchField).on('blur',function(){
+        if(searchField.val() == ''){
+            $(this).removeClass('focus');
+            $(this).addClass('blur');
+            $(icon).animate({
+                    left: '70px'
+                },10);
+        }
+    });
+
+    $('#search_form').submit(function(e){
+        e.preventDefault();
+    });
 });

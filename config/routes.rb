@@ -1,9 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'users/index'
-
-  get 'users/show'
-
   get "hashtags/:hashtag",   to: "hashtags#show",      as: :hashtag
   get "hashtags",            to: "hashtags#index",     as: :hashtags
 
@@ -12,6 +8,8 @@ Rails.application.routes.draw do
   resources :pictures
 
   #root 'pictures#index'
+
+  resources :users, only: [:show,:index]
 
   devise_scope :user do
       get "sign_out", :to => 'devise/sessions#destroy'
