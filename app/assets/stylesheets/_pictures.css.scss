@@ -1,1 +1,184 @@
+$principal: #125688;
+$secondary: #4090DB;
+$dark: #424652;
+$white: #fff;
+$highlight: #FF884D;
+$light-gray: #ededed;
+$uLight-gray: #f9f9f9;
+$gray: #939393;
+$red: #ff4c4c;
 
+#index{
+    .picture{
+        text-align: center;
+        border-radius: 1px;
+        -moz-border-radius: 1px;
+        -webkit-border-radius: 1px;
+        background: $white;
+        border: 1px solid $light-gray;
+        .user{
+            .info{
+                padding: 1.5em 1em;
+                text-align: left;
+                float: left;
+                width: 50%;
+                .img_user{
+                    width: 30px;
+                    display: inline-block;
+                }
+                .name_user{
+                    display: inline-block;
+                    vertical-align: middle;
+                    a{
+                        text-decoration: none;
+                        color: $principal;
+                        font-size: 15px;
+                        font-weight: 600;
+                        &:hover{
+                            color: $dark;
+                        }
+                    }
+                }
+            }
+        }
+        .img{
+            text-align: center;
+            position: relative;
+            margin-bottom: 1.5em;
+            margin-left: 2.5%;
+            width: 95%;
+            img{
+                width: 100%;
+            }
+            .info_pic{
+                display: none;
+            }
+            &:hover{
+                .info_pic{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    h3{
+                        color: $white;
+                        font-size: 20px;
+                        margin-top: 20%;
+                        span{
+                            padding-left: 3em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    #grad {
+  		background: -webkit-linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.15)); /* For Safari 5.1 to 6.0 */
+  		background: -o-linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.15)); /* For Opera 11.1 to 12.0 */
+  		background: -moz-linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.15)); /* For Firefox 3.6 to 15 */
+ 		background: linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.15)); /* Standard syntax */
+	}
+}
+
+#show{
+    display: inline-block;
+    display: table;
+    width: 935px;
+    .image{
+        margin: 0;
+        padding: 0;
+        display: table-cell;
+        width: 600px;
+        height: auto;
+        img{
+            display: block;
+            padding: 0;
+        }
+    }
+    .all{
+        display: table-cell;
+        position: relative;
+        margin: 0;
+        padding: 0;
+        .user{
+            height: 78px;
+            width: 287px;
+            position: absolute;
+            top: 0;
+            right: 24px;
+            border-bottom: 1px solid $light-gray;
+            padding: 20px 0;
+            display: flex;
+            font-size: 16px;
+            a{
+                text-decoration: none;
+                color: $principal;
+                font-size: 15px;
+                font-weight: 600;
+                &:hover{
+                    color: $dark;
+                }
+            }
+        }
+        .likes{
+            position: absolute;
+            top: 78px;
+            right: 24px;
+            height: 58px;
+            width: 287px;
+            padding: 20px 0;
+            .count{
+                display: inline-block;
+                text-align: left;
+                width: 50%;
+            }
+            .time{
+                display: inline-block;
+                text-align: right;
+                width: 50%;
+                float: right;
+            }
+        }
+        .desc_comments{
+            width: 287px;
+            margin-left: 24px;
+            position: absolute;
+            top: 136px;
+            right: 24px;
+            bottom: 68px;
+            a{
+                text-decoration: none;
+                color: $principal;
+                font-size: 15px;
+                font-weight: 600;
+                &:hover{
+                    color: $dark;
+                }
+            }
+            li{
+                list-style: none;
+            }
+            .description{
+                font-size: 15px;
+            }
+        }
+        .add_comment{
+            height: 68px;
+            bottom: 0;
+            right: 24px;
+            width: 287px;
+            margin-left: 24px;
+            border-top: 1px solid $light-gray;
+            .fa{
+                font-size: 15px;
+                display: inline-block;
+            }
+            h3{
+                font-size: 15px;
+                font-weight: 300;
+                display: inline-block;
+            }
+        }
+    }
+}

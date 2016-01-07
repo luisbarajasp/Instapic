@@ -23,8 +23,8 @@ class PicturesController < ApplicationController
 
   def show
       @picture = Picture.find(params[:id])
-      @newComment = Comment.new comment_params
-      @comments = @picture.comments.order('created_at DESC')
+    #   @newComment = Comment.new comment_params
+    #   @comments = @picture.comments.order('created_at DESC')
   end
 
   def edit
@@ -58,11 +58,12 @@ class PicturesController < ApplicationController
       params.require(:picture).permit(:description,:image,:user_id)
   end
 
-  def comment_params
-      params.require(:comment).permit(:content)
-  end
+  # def comment_params
+  #     params.require(:comment).permit(:content)
+  # end
 
   def check_user
+      @picture = Picture.find(params[:id])
     	if current_user != @picture.user
     		redirect_to root, alert: "This pic is not yours"
     	end

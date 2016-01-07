@@ -1,2 +1,27 @@
-<h1>Pictures#show</h1>
-<p>Find me in app/views/pictures/show.html.erb</p>
+<div id="show">
+    <div class="image">
+        <%= image_tag @picture.image.url(:medium), :class => "imageShow" %>
+    </div>
+    <div id="allBoutImage" class="all">
+        <div class="user">
+            <%= link_to (image_tag(@picture.user.avatar.url(:mini),:class => "img-circle") + " #{@picture.user.username}"), @picture.user %>
+        </div>
+        <div class="likes">
+            <div class="count">
+
+            </div>
+            <div class="time">
+                <%= time_ago_in_words(@picture.created_at) %>
+            </div>
+        </div>
+        <div class="desc_comments">
+            <div class="description">
+                <%= link_to @picture.user.username, @picture.user %> <%= @picture.description %>
+            </div>
+        </div>
+        <div class="add_comment">
+            <a href="#"><i class="fa fa-heart-o"></i></a>
+            <h3>Add Comment...</h3>
+        </div>
+    </div>
+</div>

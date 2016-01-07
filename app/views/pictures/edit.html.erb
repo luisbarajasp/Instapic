@@ -1,2 +1,7 @@
-<h1>Pictures#edit</h1>
-<p>Find me in app/views/pictures/edit.html.erb</p>
+<div class="super_skinny_wrapper edit_pic">
+    <h2>Edit Pic</h2>
+    <div class="center">
+        <%= image_tag @picture.image.url(:medium) %>
+    </div>
+    <%= render 'form' %>
+</div>

@@ -74,4 +74,7 @@ $(document).ready(function(){
     $('#search_form').submit(function(e){
         e.preventDefault();
     });
+
+    var findHeight = $('.imageShow').height();
+    $('#allBoutImage').css({"height: "+findHeight+"px;"});
 });
