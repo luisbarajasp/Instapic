@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require fancybox
 //= require jquery_ujs
 //= require bootstrap/bootstrap-tooltip
 //= require twitter/bootstrap

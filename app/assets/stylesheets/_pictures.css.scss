@@ -232,6 +232,7 @@ $red: #ff4c4c;
                     color: $principal;
                     font-size: 15px;
                     font-weight: 600;
+                    margin-right: .5em;
                     &:hover{
                         color: $dark;
                     }
@@ -242,16 +243,6 @@ $red: #ff4c4c;
                 .comment{
                     position: relative;
                     padding: .15em 0;
-                    a{
-                        text-decoration: none;
-                        color: $principal;
-                        font-size: 15px;
-                        font-weight: 600;
-                        margin-right: .5em;
-                        &:hover{
-                            color: $dark;
-                        }
-                    }
                     a.delete-comment{
                         position: absolute;
                         top: 2px;
