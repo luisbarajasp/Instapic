@@ -27,6 +27,7 @@ gem 'omniauth', '~> 1.3', '>= 1.3.1'
 gem 'omniauth-facebook', '~> 3.0'
 gem 'simple_hashtag', '~> 0.1.9'
 gem 'friendly_id', '~> 5.1'
+gem 'autosize-rails', '~> 1.18', '>= 1.18.17'
 
 
 

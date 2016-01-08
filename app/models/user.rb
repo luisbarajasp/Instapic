@@ -19,6 +19,6 @@ class User < ActiveRecord::Base
   extend FriendlyId
   friendly_id :username, use: :slugged
 
-  has_many :pictures
-  has_many :comments
+  has_many :pictures, dependent: :destroy
+  has_many :comments, dependent: :destroy
 end

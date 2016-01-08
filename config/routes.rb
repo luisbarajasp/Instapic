@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  resources :pictures
+  resources :pictures do
+      resources :comments, only: [:create,:destroy]
+  end
 
   #root 'pictures#index'
 

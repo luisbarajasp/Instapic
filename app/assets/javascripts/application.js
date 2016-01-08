@@ -77,4 +77,5 @@ $(document).ready(function(){
 
     var findHeight = $('.imageShow').height();
     $('#allBoutImage').css({"height: "+findHeight+"px;"});
+
 });

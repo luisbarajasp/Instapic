@@ -19,9 +19,13 @@
                 <%= link_to @picture.user.username, @picture.user %> <%= @picture.description %>
             </div>
         </div>
-        <div class="add_comment">
+        <div class="comment_like_form">
             <a href="#"><i class="fa fa-heart-o"></i></a>
-            <h3>Add Comment...</h3>
+            <div class="comment_form">
+                <%= form_for [@picture, @picture.comments.new] do |f| %>
+                    <h3><%= f.text_area :content, placeholder: 'Add a comment...' %></h3>
+                <% end %>
+            </div>
         </div>
     </div>
 </div>

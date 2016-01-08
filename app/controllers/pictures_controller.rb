@@ -23,7 +23,6 @@ class PicturesController < ApplicationController
 
   def show
       @picture = Picture.find(params[:id])
-    #   @newComment = Comment.new comment_params
     #   @comments = @picture.comments.order('created_at DESC')
   end
 
@@ -57,10 +56,6 @@ class PicturesController < ApplicationController
   def picture_params
       params.require(:picture).permit(:description,:image,:user_id)
   end
-
-  # def comment_params
-  #     params.require(:comment).permit(:content)
-  # end
 
   def check_user
       @picture = Picture.find(params[:id])

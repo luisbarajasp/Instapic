@@ -8,17 +8,44 @@
                     </div>
                     <div class="name_user">
                         <%= link_to picture.user.username, picture.user %> <br>
-                        <%= picture.user.name %>
                     </div>
+                </div>
+                <div class="time">
+                    <%= time_ago_in_words(picture.created_at) %>
                 </div>
             </div>
             <div class="img">
                 <%= image_tag picture.image.url(:medium) %>
                 <%= link_to picture do %>
                 <div class="info_pic" id="grad">
-                    <h3><i class="fa fa-heart"></i> 103 <span><i class="fa fa-comment"> 54</i></span></h3>
+                    <h3><i class="fa fa-heart"></i> 103 <span><i class="fa fa-comment"></i> <%= picture.comments.count %></span></h3>
                 </div>
                 <% end %>
+            </div>
+            <div class="bottom">
+                <div class="desc_comments">
+                    <div class="description">
+                        <%= link_to picture.user.username, picture.user %> <%= picture.description %>
+                    </div>
+                    <% if picture.comments %>
+                        <% picture.comments.each do |comment| %>
+                            <div class="comment">
+                                <%= link_to comment.user.username, comment.user %> <%= comment.content %>
+                                <% if comment.user == current_user %>
+                                    <%= link_to '<i class="fa fa-times"></i>'.html_safe , picture_comment_path(picture,comment), method: :delete, data: { confirm: "Are you sure?" }, :class => "delete-comment" %>
+                                <% end %>
+                            </div>
+                        <% end %>
+                    <% end %>
+                </div>
+                <div class="comment_like_form">
+                    <a href="#"><i class="fa fa-heart-o"></i></a>
+                    <div class="comment_form">
+                        <%= form_for ([picture, picture.comments.new], remote: true) do |f| %>
+                            <h3><%= f.text_area :content, placeholder: 'Add a comment...', rows: 1 %></h3>
+                        <% end %>
+                    </div>
+                </div>
             </div>
         </div>
     <% end %>
