@@ -79,8 +79,10 @@ $(document).ready(function(){
 
     $(".imageShow").load(function(){
         var image_h=this.height;
+        var dc_height = image_h - 210;
         $(".picture").height(image_h);
         $(".all").height(image_h);
+        $(".desc_comments").css("height", dc_height + 'px');
     });
 
 });
