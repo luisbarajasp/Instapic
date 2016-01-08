@@ -1,38 +1,7 @@
-<div id="show">
-    <div class="image">
-        <%= image_tag @picture.image.url(:medium), :class => "imageShow" %>
-    </div>
-    <div id="allBoutImage" class="all">
-        <div class="user">
-            <%= link_to (image_tag(@picture.user.avatar.url(:mini),:class => "img-circle") + " #{@picture.user.username}"), @picture.user %>
-        </div>
-        <div class="likes">
-            <div class="count">
-
-            </div>
-            <div class="time">
-                <%= time_ago_in_words(@picture.created_at) %>
-            </div>
-        </div>
-        <div class="desc_comments">
-            <div class="description">
-                <%= link_to @picture.user.username, @picture.user %> <%= @picture.description %>
-            </div>
-            <div class="comments" id="comments_<%= @picture.id %>">
-            <% if @picture.comments %>
-                <% @picture.comments.each do |comment| %>
-                    <%= render @picture.comments, picture: @picture %>
-                <% end %>
-            <% end %>
-            </div>
-        </div>
-        <div class="comment_like_form">
-            <a href="#"><i class="fa fa-heart-o"></i></a>
-            <div class="comment_form">
-                <%= form_for([@picture, @picture.comments.new], remote: true) do |f| %>
-                    <h3><%= f.text_field :content, placeholder: 'Add a comment...',id: "comment_content_#{@picture.id}", class: "comment_content" %></h3>
-                <% end %>
-            </div>
-        </div>
-    </div>
+<div class="wrapper2" id="show">
+    <% if user_signed_in? %>
+    
+    <% else %>
+    <%= render 'pic' %>
+    <% end %>
 </div>

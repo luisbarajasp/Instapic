@@ -76,8 +76,10 @@ $(document).ready(function(){
         e.preventDefault();
     });
 
-    // var findHeight = $('.imageShow').height();
-    // $('#allBoutImage').css({"height: "+findHeight+"px;"});
-
+    $(".imageShow").load(function(){
+        var image_h=this.height;
+        $(".picture").height(image_h);
+        $(".all").height(image_h);
+    });
 
 });

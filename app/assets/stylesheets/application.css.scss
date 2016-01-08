@@ -44,9 +44,20 @@
 	margin: 0px auto;
 }
 
+body {
+    background-color: $uLight-gray;
+}
+
 .wrapper2{
-   width: 85%;
+   width: 935px;
    margin: 0px auto;
+}
+
+@media(max-width: 935px){
+    .wrapper2{
+       width: 100vw;
+       margin: 0px auto;
+    }
 }
 
 .skinny_wrapper{
@@ -56,9 +67,15 @@
 }
 
 .super_skinny_wrapper{
-	width: 60%;
-	max-width: 570px;
+	width: 570px;
 	margin: 0px auto;
+}
+
+@media(max-width: 570px){
+    .super_skinny_wrapper{
+       width: 100vw;
+       margin: 0px auto;
+    }
 }
 
 .wrapper_padding{
@@ -115,8 +132,12 @@ p,ul,ol{
 .navbar{
     height: 78px;
     border-bottom: 1px solid $light-gray;
+    background: $white;
     .navbar-brand{
+        display: inline-block;
         margin-top: 13px;
+        min-width: 102px;
+        width: 33.3%;
         a{
             text-decoration: none;
             font-family: 'Lobster Two', cursive;
@@ -126,8 +147,10 @@ p,ul,ol{
     }
     .search-form{
         margin-top: 10px;
+        display: inline-block;
         padding: 15px;
         text-align: center;
+        width: 33.3%;
         #query{
             -moz-border-radius: 40px;
             -webkit-border-radius: 40px;
@@ -159,7 +182,9 @@ p,ul,ol{
     }
     .user{
         text-align: right;
+        display: inline-block;
         margin-top: 31px;
+        width: 33.3%;
         a{
             text-decoration: none;
             color: $principal;

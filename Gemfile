@@ -29,6 +29,7 @@ gem 'simple_hashtag', '~> 0.1.9'
 gem 'friendly_id', '~> 5.1'
 gem 'autosize-rails', '~> 1.18', '>= 1.18.17'
 gem 'bootstrap-tooltip-rails', '~> 0.1'
+gem 'fancybox2-rails', '~> 0.2.8'
 
 
 

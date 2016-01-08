@@ -1,1 +1,127 @@
+$principal: #125688;
+$secondary: #4090DB;
+$dark: #424652;
+$white: #fff;
+$highlight: #FF884D;
+$light-gray: #ededed;
+$uLight-gray: #f9f9f9;
+$gray: #939393;
+$red: #ff4c4c;
 
+#user_show{
+    .header{
+        height: 180px;
+        margin: 45px 0;
+        padding: 20px 0;
+        .user_img{
+            height: 140px;
+            width: 31%;
+            max-width: 292px;
+            text-align: center;
+            float: left;
+            margin-right: 30px;
+            img{
+                margin: -7px 70px;
+                width: 152px;
+                height: 152px;
+                border: 1px solid $light-gray;
+            }
+        }
+        .user_info{
+            height: 140px;
+            width: 610px;
+            float: right;
+            .username{
+                height: 40px;
+                font-size: 34px;
+                font-weight: 300;
+            }
+            .desc{
+                height: 48px;
+                margin-top: 14px;
+                font-size: 17px;
+                .name_bio{
+                    font-weight: 400;
+                    span{
+                        font-weight: 600;
+                    }
+                }
+                .webpage{
+                    font-weight: 500;
+                    a{
+                        color: $principal;
+                        text-decoration: none;
+                        &:hover{
+                            color: $dark;
+                        }
+                    }
+                }
+            }
+            .counters{
+                font-size: 17px;
+                margin-top: 17px;
+                span{
+                    font-weight: 600;
+                }
+                .pictures{
+                    display: inline-block;
+                    width: 30%;
+                }
+                .followers{
+                    display: inline-block;
+                    width: 30%;
+                }
+                .following{
+                    display: inline-block;
+                    width: 30%;
+                }
+            }
+        }
+    }
+    .content{
+        .picture{
+            max-height: 291px;
+            max-width: 291px;
+            width: 31.12vw;
+            height: 31.12vw;
+            margin: 0 30px;
+            overflow: hidden;
+            position: relative;
+            img{
+                position: absolute;
+                top: -9999px;
+                bottom: -9999px;
+                left: -9999px;
+                right: -9999px;
+                margin: auto;
+            }
+            .info_pic{
+                display: none;
+            }
+            &:hover{
+                .info_pic{
+                    background: -webkit-linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.15)); /* For Safari 5.1 to 6.0 */
+              		background: -o-linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.15)); /* For Opera 11.1 to 12.0 */
+              		background: -moz-linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.15)); /* For Firefox 3.6 to 15 */
+             		background: linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.15)); /* Standard syntax */
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    text-align: center;
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    h3{
+                        color: $white;
+                        font-size: 20px;
+                        line-height: 291px;
+                        margin: 0;
+                        span{
+                            padding-left: 3em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

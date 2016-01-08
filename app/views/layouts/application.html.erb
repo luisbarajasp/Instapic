@@ -32,7 +32,11 @@
             </div>
             <div class="user col-md-4 col-sm-4">
                 <% if controller.controller_name == 'users' && controller.action_name == 'show' %>
-                <%= link_to "Sign out",destroy_user_session_path, method: :delete %>
+                    <% if @user == current_user %>
+                        <%= link_to "Sign out",destroy_user_session_path, method: :delete %>
+                    <% else %>
+                        <%= link_to "#{current_user.username}",current_user %>
+                    <% end %>
                 <% else %>
                 <%= link_to "#{current_user.username}",current_user %>
                 <% end %>
@@ -62,6 +66,7 @@
     <% end %>
 
 <%= yield %>
+
 
 </body>
 </html>

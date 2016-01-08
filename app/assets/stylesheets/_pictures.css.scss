@@ -166,107 +166,147 @@ $red: #ff4c4c;
 }
 
 #show{
-    display: inline-block;
-    display: table;
-    width: 935px;
-    .image{
+    .picture{
+        display: inline-block;
         margin: 0;
         padding: 0;
-        display: table-cell;
-        width: 600px;
+        width: 935px;
         height: auto;
         img{
+            display: inline-block;
             display: block;
             padding: 0;
+            float: left;
         }
-    }
-    .all{
-        display: table-cell;
-        position: relative;
-        margin: 0;
-        padding: 0;
-        .user{
-            height: 78px;
-            width: 287px;
-            position: absolute;
-            top: 0;
-            right: 24px;
-            border-bottom: 1px solid $light-gray;
-            padding: 20px 0;
-            display: flex;
-            font-size: 16px;
-            a{
-                text-decoration: none;
-                color: $principal;
-                font-size: 15px;
-                font-weight: 600;
-                &:hover{
-                    color: $dark;
-                }
-            }
-        }
-        .likes{
-            position: absolute;
-            top: 78px;
-            right: 24px;
-            height: 58px;
-            width: 287px;
-            padding: 20px 0;
-            .count{
-                display: inline-block;
-                text-align: left;
-                width: 50%;
-            }
-            .time{
-                display: inline-block;
-                text-align: right;
-                width: 50%;
-                float: right;
-            }
-        }
-        .desc_comments{
-            width: 287px;
-            margin-left: 24px;
-            position: absolute;
-            top: 136px;
-            right: 24px;
-            bottom: 68px;
-            a{
-                text-decoration: none;
-                color: $principal;
-                font-size: 15px;
-                font-weight: 600;
-                &:hover{
-                    color: $dark;
-                }
-            }
-            .description{
-                font-size: 15px;
-            }
-        }
-        .comment_like_form{
-            height: 68px;
-            bottom: 0;
-            right: 24px;
-            width: 287px;
-            margin-left: 24px;
-            border-top: 1px solid $light-gray;
-            a{
-                font-size: 15px;
-                color: $gray;
-                display: inline-block;
-            }
-            .comment_form{
-                margin-left: 1em;
-                display: inline-block;
-                width: 80%;
-                h3{
+        .all{
+            position: relative;
+            display: inline-block;
+            padding: 0 24px;
+            margin: 0;
+            background: $white;
+            overflow: hidden;
+
+            .user{
+                height: 78px;
+                width: 287px;
+                border-bottom: 1px solid $light-gray;
+                padding: 20px 0;
+                font-size: 16px;
+                a{
+                    text-decoration: none;
+                    color: $principal;
                     font-size: 15px;
-                    font-weight: 300;
+                    line-height: 37px;
+                    font-weight: 600;
+                    &:hover{
+                        color: $dark;
+                    }
                 }
-                .comment_content{
-                    border: none;
-                    width: 100%;
+                img{
+                    margin-right: 5px;
+                }
+            }
+            .likes{
+                font-weight: 600;
+                height: 58px;
+                width: 287px;
+                padding: 20px 0;
+                .count{
+                    display: inline-block;
+                    text-align: left;
+                    width: 50%;
+                }
+                .time{
+                    display: inline-block;
+                    text-align: right;
+                    width: 50%;
+                    float: right;
+                    color: $gray;
+                }
+            }
+            .desc_comments{
+                width: 287px;
+
+                a{
+                    text-decoration: none;
+                    color: $principal;
+                    font-size: 15px;
+                    font-weight: 600;
+                    &:hover{
+                        color: $dark;
+                    }
+                }
+                .description{
+                    font-size: 15px;
+                }
+                .comment{
+                    position: relative;
+                    padding: .15em 0;
+                    a{
+                        text-decoration: none;
+                        color: $principal;
+                        font-size: 15px;
+                        font-weight: 600;
+                        margin-right: .5em;
+                        &:hover{
+                            color: $dark;
+                        }
+                    }
+                    a.delete-comment{
+                        position: absolute;
+                        top: 2px;
+                        right: 2px;
+                        color: $dark;
+                        &:hover{
+                            color: $red;
+                        }
+                    }
+                }
+            }
+            .comment_like_form{
+                height: 68px;
+                bottom: 0;
+                right: 24px;
+                width: 287px;
+                position: absolute;
+                border-top: 1px solid $light-gray;
+                a.fa{
+                    text-decoration: none;
+                    font-size: 15px;
+                    color: $gray;
+                    display: inline-block;
+                    margin-right: 2px;
+                }
+                .change-icon > .fa:nth-child(2) {
+                  display: none;
+                }
+                a:hover{
+                    .change-icon > .fa:nth-child(1) {
+                      display: none;
+                    }
+                    .change-icon > .fa:nth-child(2) {
+                      display: inherit;
+                    }
+                }
+                a.log_in{
+                    color: $principal;
+                    text-decoration: none;
+                    &:hover{
+                        color: $dark;
+                    }
+                }
+                .comment_form{
+                    margin-left: 1em;
+                    display: inline-block;
+                    width: 80%;
+                    h3{
+                        font-size: 15px;
+                        font-weight: 300;
+                    }
+                    .comment_content{
+                        border: none;
+                        width: 100%;
+                    }
                 }
             }
         }

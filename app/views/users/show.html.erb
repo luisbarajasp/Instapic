@@ -1,4 +1,4 @@
-<div class="wrapper2">
+<div class="wrapper2" id="user_show">
     <div class="header">
         <div class="user_img">
             <%= image_tag @user.avatar.url(:medium), :class => "img-circle" %>
@@ -7,25 +7,39 @@
             <div class="username">
                 <%= @user.username %>
             </div>
-            <div class="name_desc">
-                <span><%= @user.name %></span> <% if @user.bio? %><%= @user.bio %><% end %>
+            <div class="desc">
+                <div class="name_bio">
+                    <span><%= @user.name %></span> <% if @user.bio? %><%= @user.bio %><% end %>
+                </div>
+                <% if @user.webpage? %>
+                <div class="webpage">
+                    <a href="<%= @user.webpage %>"><%= @user.webpage %></a>
+                </div>
+                <% end %>
             </div>
-            <% if @user.webpage? %>
-            <div class="webpage">
-                <a href="<%= @user.webpage %>"><%= @user.webpage %></a>
-            </div>
-            <% end %>
             <div class="counters">
                 <div class="pictures">
-                    <%= @user.pictures.count %> pictures
+                    <span><%= @user.pictures.count %></span> pictures
                 </div>
                 <div class="followers">
-                    10 followers
+                    <span>10</span> followers
                 </div>
                 <div class="following">
-                    43 following
+                    <span>43</span> following
                 </div>
             </div>
         </div>
+    </div>
+    <div class="content">
+        <% @user.pictures.each do |picture| %>
+            <div class="picture">
+                <%= image_tag picture.image.url(:preview) %>
+                <%= link_to picture do %>
+                    <div class="info_pic">
+                        <h3><i class="fa fa-heart"></i> <%= picture.get_likes.size %> <span><i class="fa fa-comment"></i> <%= picture.comments.count %></span></h3>
+                    </div>
+                <% end %>
+            </div>
+        <% end %>
     </div>
 </div>
