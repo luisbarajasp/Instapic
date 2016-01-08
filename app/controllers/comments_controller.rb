@@ -6,7 +6,10 @@ class CommentsController < ApplicationController
         @comment.user_id = current_user.id
 
         if @comment.save
-            redirect_to :back, notice: "Commented succesfully."
+            respond_to do |format|
+                format.html { redirect_to :back, notice: "Commented succesfully." }
+                format.js
+              end
         else
             redirect_to :back, alert: "Error: try again."
         end
@@ -15,8 +18,14 @@ class CommentsController < ApplicationController
     def destroy
       @comment = @picture.comments.find(params[:id])
 
-      @comment.destroy
-      redirect_to :back, notice: "Comment deleted succesfully."
+        if @comment.user_id == current_user.id
+          @comment.delete
+          respond_to do |format|
+            format.html { redirect_to :back, notice: "Comment deleted succesfully." }
+            format.js
+          end
+        end
+
     end
 
     private

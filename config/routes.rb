@@ -7,6 +7,10 @@ Rails.application.routes.draw do
 
   resources :pictures do
       resources :comments, only: [:create,:destroy]
+      member do
+        put "like", to: "pictures#like"
+        put "dislike", to: "pictures#unlike"
+    end
   end
 
   #root 'pictures#index'

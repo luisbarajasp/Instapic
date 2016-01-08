@@ -24,6 +24,15 @@
       </div>
 
       <div class="form-group">
+        <%= f.text_area :bio, :placeholder => "Talk about you...", :class => "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :webpage %><br />
+        <%= f.text_field :webpage, :placeholder => "Your site", :class => "form-control" %>
+      </div>
+
+      <div class="form-group">
         <%= f.label :email %><br />
         <%= f.email_field :email, :class => "form-control" %>
       </div>

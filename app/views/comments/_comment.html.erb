@@ -1,0 +1,8 @@
+<div class="comment">
+    <%= link_to comment.user.username, comment.user %> <%= comment.content %>
+    <% if comment.user == current_user %>
+        <%= link_to picture_comment_path(picture,comment), method: :delete, data: { confirm: "Are you sure?" }, :class => "delete-comment", remote: true do %>
+            <i class="fa fa-times"></i>
+        <% end %>
+    <% end %>
+</div>

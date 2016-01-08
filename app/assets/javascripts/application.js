@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap/bootstrap-tooltip
 //= require twitter/bootstrap
 //= require turbolinks
 //= require masonry/jquery.masonry
@@ -75,7 +76,8 @@ $(document).ready(function(){
         e.preventDefault();
     });
 
-    var findHeight = $('.imageShow').height();
-    $('#allBoutImage').css({"height: "+findHeight+"px;"});
+    // var findHeight = $('.imageShow').height();
+    // $('#allBoutImage').css({"height: "+findHeight+"px;"});
+
 
 });

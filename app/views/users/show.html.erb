@@ -1,2 +1,31 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="wrapper2">
+    <div class="header">
+        <div class="user_img">
+            <%= image_tag @user.avatar.url(:medium), :class => "img-circle" %>
+        </div>
+        <div class="user_info">
+            <div class="username">
+                <%= @user.username %>
+            </div>
+            <div class="name_desc">
+                <span><%= @user.name %></span> <% if @user.bio? %><%= @user.bio %><% end %>
+            </div>
+            <% if @user.webpage? %>
+            <div class="webpage">
+                <a href="<%= @user.webpage %>"><%= @user.webpage %></a>
+            </div>
+            <% end %>
+            <div class="counters">
+                <div class="pictures">
+                    <%= @user.pictures.count %> pictures
+                </div>
+                <div class="followers">
+                    10 followers
+                </div>
+                <div class="following">
+                    43 following
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

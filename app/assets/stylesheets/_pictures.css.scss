@@ -60,6 +60,10 @@ $red: #ff4c4c;
             }
             &:hover{
                 .info_pic{
+                    background: -webkit-linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.15)); /* For Safari 5.1 to 6.0 */
+              		background: -o-linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.15)); /* For Opera 11.1 to 12.0 */
+              		background: -moz-linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.15)); /* For Firefox 3.6 to 15 */
+             		background: linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.15)); /* Standard syntax */
                     position: absolute;
                     top: 0;
                     left: 0;
@@ -123,20 +127,24 @@ $red: #ff4c4c;
                 border-top: 1px solid $light-gray;
                 position: relative;
                 a{
+                    text-decoration: none;
                     position: absolute;
-                    top: 26px;
+                    top: 20px;
                     left: 0;
                     font-size: 15px;
                     color: $gray;
                     display: inline-block;
                 }
-                textarea{
-                    max-width: 100%;
-                    margin-top: 7px;
-                    resize: none;
-                    -moz-box-sizing: border-box;
-                    box-sizing: border-box;
-                    height: auto;
+                .change-icon > .fa:nth-child(2) {
+                  display: none;
+                }
+                a:hover{
+                    .change-icon > .fa:nth-child(1) {
+                      display: none;
+                    }
+                    .change-icon > .fa:nth-child(2) {
+                      display: inherit;
+                    }
                 }
                 .comment_form{
                     margin-left: 2em;
@@ -147,7 +155,7 @@ $red: #ff4c4c;
                         font-weight: 300;
                         height: auto;
                     }
-                    #comment_content{
+                    .comment_content{
                         border: none;
                         width: 100%;
                     }
@@ -155,12 +163,6 @@ $red: #ff4c4c;
             }
         }
     }
-    #grad {
-  		background: -webkit-linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.15)); /* For Safari 5.1 to 6.0 */
-  		background: -o-linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.15)); /* For Opera 11.1 to 12.0 */
-  		background: -moz-linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.15)); /* For Firefox 3.6 to 15 */
- 		background: linear-gradient(rgba(0,0,0,.15), rgba(0,0,0,.15)); /* Standard syntax */
-	}
 }
 
 #show{
@@ -262,7 +264,7 @@ $red: #ff4c4c;
                     font-size: 15px;
                     font-weight: 300;
                 }
-                #comment_content{
+                .comment_content{
                     border: none;
                     width: 100%;
                 }

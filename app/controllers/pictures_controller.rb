@@ -51,6 +51,21 @@ class PicturesController < ApplicationController
       redirect_to pictures
   end
 
+  def like
+    @picture = Picture.find(params[:id])
+    @picture.liked_by current_user
+
+    redirect_to :back
+
+ end
+
+ def unlike
+    @picture = Picture.find(params[:id])
+    @picture.unliked_by current_user
+
+    redirect_to :back
+ end
+
   private
 
   def picture_params
