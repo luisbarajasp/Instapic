@@ -226,7 +226,8 @@ $red: #ff4c4c;
             }
             .desc_comments{
                 width: 287px;
-                overflow: scroll;
+                overflow-y: auto;
+                overflow-x:hidden;
                 a{
                     text-decoration: none;
                     color: $principal;

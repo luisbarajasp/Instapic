@@ -22,13 +22,15 @@
             </div>
             <% if user_signed_in? %>
             <div class="search-form col-md-4 col-sm-4">
-                <form id="search_form" name="search_name" onsubmit="return search()">
+                <%= form_tag "/search/create", method: :get, id: "search_form" do %>
                   <div class="fieldContainer">
                       <span class="fa fa-search"></span>
-                      <input type="search" id="query" class="searchField blur" placeholder="Search">
-                      <input type="submit" name="searchButton" id="searchButton" value="">
+
+                        <%= text_field_tag :keyword, nil, placeholder: "Search", id: "query", class: "searchField blur" %>
+
+                      <!-- <input type="search" id="query" class="searchField blur" placeholder="Search"> -->
                   </div>
-               </form>
+                   <% end %>
             </div>
             <div class="user col-md-4 col-sm-4">
                 <% if controller.controller_name == 'users' && controller.action_name == 'show' %>

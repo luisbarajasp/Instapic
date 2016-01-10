@@ -73,9 +73,9 @@ $(document).ready(function(){
         }
     });
 
-    $('#search_form').submit(function(e){
-        e.preventDefault();
-    });
+    // $('#search_form').submit(function(e){
+    //
+    // });
 
     $(".imageShow").load(function(){
         var image_h=this.height;
