@@ -69,6 +69,14 @@
 
 <%= yield %>
 
+<% if user_signed_in? %>
+    <a href="/pictures/new">
+        <div class="new_pic">
+            <i class="fa fa-camera-retro"></i>
+        </div>
+    </a>
+<% end %>
+
 
 </body>
 </html>

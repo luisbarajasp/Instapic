@@ -336,6 +336,28 @@ p,ul,ol{
     text-align: center;
 }
 
+.new_pic{
+    position: fixed;
+    top: 85px;
+    right: 8px;
+    height: 40px;
+    width: 40px;
+    border-radius: 40px;
+    -moz-border-radius: 40px;
+    -webkit-border-radius: 40px;
+    background: $principal;
+    text-align: center;
+    line-height: 40px;
+    i{
+        color: $white;
+        text-decoration: none;
+    }
+    &:hover{
+        background: $dark;
+        cursor: pointer;
+    }
+}
+
 @media (max-width: 993px){
     .img-iphone{
         display: none;

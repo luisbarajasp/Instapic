@@ -8,4 +8,6 @@ class SearchController < ApplicationController
       raise @users.to_yaml
 
   end
+  def show
+  end
 end
