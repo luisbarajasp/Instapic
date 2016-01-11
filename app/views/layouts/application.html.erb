@@ -31,6 +31,7 @@
                       <!-- <input type="search" id="query" class="searchField blur" placeholder="Search"> -->
                   </div>
                    <% end %>
+                   <div class="searching_results"></div>
             </div>
             <div class="user col-md-4 col-sm-4">
                 <% if controller.controller_name == 'users' && controller.action_name == 'show' %>
@@ -75,6 +76,11 @@
             <i class="fa fa-camera-retro"></i>
         </div>
     </a>
+    <div class="tooltip_new_pic">
+        <p>
+            New picture
+        </p>
+    </div>
 <% end %>
 
 

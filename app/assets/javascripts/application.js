@@ -85,4 +85,13 @@ $(document).ready(function(){
         $(".desc_comments").css("height", dc_height + 'px');
     });
 
+    $('.new_pic').hover(
+        function(){
+            $('.tooltip_new_pic').css('background', '#000')
+        },
+        function(){
+            $('.tooltip_new_pic').css('background', '')
+        }
+    );
+
 });
